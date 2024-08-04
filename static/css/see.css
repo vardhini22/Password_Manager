@@ -1,0 +1,30 @@
+body {
+    background-color: #f0f8ea; /* light green */
+    font-family: Arial, sans-serif;
+    background-image: url('images/bg.jpg');
+}
+
+table {
+    width: 80%; /* Reduced table width */
+    margin: 0 auto; /* Center align the table */
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.7); /* transparent white */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #4CAF50; /* dark green */
+    color: white;
+}
+
+td {
+    color: black; /* Text color for td */
+    padding: 8px;
+    text-align: center; /* Center align the content */
+}
+
+h2 {
+    text-align: center; /* Center align the h2 */
+    color: white; /* Text color for h2 */
+}

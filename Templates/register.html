@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign Up</h2>
+        <form class="login-form" method="POST" enctype="multipart/form-data">
+            {%csrf_token%}
+            <input type="text" name="name" placeholder="Name" pattern="^(?![\s\d])(?!.*[@$!%*?&])[A-Za-z\s]+$" title="Name should not contain numbers, special characters, and should not start with a space character" autocomplete="off" required>
+            <input type="text" name="nick" placeholder="Nickname" pattern="^(?![\s\d])(?!.*[@$!%*?&])[A-Za-z\s]+$" title="Nickname should not contain numbers, special characters, and should not start with a space character" autocomplete="off" required>
+            <input type="text" name="chocolate" placeholder="Favorite Chocolate" pattern="[A-Za-z\s]+" title="Chocolate name should contain only letters" autocomplete="off" required>
+            <input type="text" name="actor" placeholder="Favorite Actor" pattern="[A-Za-z\s]+" title="Actor name should contain only letters" autocomplete="off" required>
+            <input type="file" name="img" placeholder="Upload Image" autocomplete="off" required>
+            <p>Already have an account? <a href="login">Log In</a></p>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

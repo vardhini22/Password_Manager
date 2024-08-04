@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/result.css' %}">
+  <title>Login</title>
+
+</head>
+
+<body>
+
+  {% if process == "LOGIN" and state == "SUCCESS" %}
+  <div class="container">
+    <div class="form-container">
+      <h2>Login Successful</h2>
+      <form action="enter">
+        <input type="submit" value="Enter Data">
+      </form>
+      <form action="see">
+        <input type="submit" value="See Data">
+      </form>
+    </div>
+  </div>
+  {% endif %}
+  {% if process == "LOGIN" and state == "FAILURE" %}
+  <form action="home">
+    <input type="submit" value="retry">
+  </form>
+  {% endif %}
+  {% if process == "REGISTRATION" and state == "SUCCESS" %}
+  <form action="login">
+    <h1>REGISTRATION SUCCESS</h1>
+    <input type="submit" value="Login">
+  </form>
+  {% endif %}
+  {% if process == "REGISTRATION" and state == "FAILURE" %}
+  <form action="home">
+    <h1>REGISTRATION FAIL</h1>
+    <input type="submit" value="retry">
+  </form>
+  {% endif %}
+
+  {% if process == "ENTER" and state == "SUCCESS" %}
+  <form action="home">
+    <h1>ENTERED SUCCESSFULLY</h1>
+    <input type="submit" value="go back to home">
+  </form>
+  {% endif %}
+  {% if process == "ENTER" and state == "FAILURE" %}
+  <form action="home">
+    <h1>FAILED</h1>
+    <input type="submit" value="retry">
+  </form>
+  {% endif %}
+
+</body>
+
+</html>

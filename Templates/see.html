@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            {% load static %}
+        <link rel="stylesheet" href="{% static 'css/see.css' %}">
+        <title>Login</title>
+          
+    </head>
+</head>
+<body>
+    <h2>Your Passwords</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in see %}
+                <tr>
+                    {% for element in row %}
+                        <td>{{ element }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
